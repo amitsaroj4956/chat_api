@@ -1,0 +1,16 @@
+{
+  "name": "socket-chat-example",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodeman": "^1.1.2",
+    "socket.io": "^4.5.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
