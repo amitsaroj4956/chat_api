@@ -4,7 +4,7 @@ let Conversation = require("./Database/Controller");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 app.use(cors());
-const http = require("http").createServer(app);
+//const http = require("http").createServer(app);
 const dotenv = require("dotenv");
 dotenv.config();
 app.use(bodyParser.json());
@@ -42,7 +42,7 @@ var clients = [{
     name: 'Test User',
     userProfile: 'null',
     busy: false
-},];
+}];
 var busyUsers = [];
 var numUsers = 0;
 
@@ -101,7 +101,6 @@ io.on("connection", (socket) => {
 
         if (!isFound) {
             if (addedUser) {
-
                 clients.push({
                     id: socket.id,
                     userId: userId,
@@ -110,7 +109,6 @@ io.on("connection", (socket) => {
                     busy: false,
                 });
             } else {
-
                 clients.push({
                     id: socket.id,
                     userId: userId,
@@ -137,10 +135,10 @@ io.on("connection", (socket) => {
             numUsers: numUsers,
         });
         socket.broadcast.emit("client-list", clients);
-        console.log(busyUsers, "client-list", clients);
+        // console.log("client-list", clients);
         setInterval(() => {
             socket.broadcast.emit('client-list', clients);
-            // console.log('client-list', clients);
+            //   console.log('client-list', clients);
         }, 3000);
     });
     // when the client emits 'typing', we broadcast it to others
