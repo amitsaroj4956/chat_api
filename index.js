@@ -36,13 +36,7 @@ app.use(function (req, res, next) {
     next();
 });
 const port = process.env.PORT || 5000;
-var clients = [{
-    id: 0,
-    userId: 0,
-    name: 'Test User',
-    userProfile: 'null',
-    busy: false
-}];
+var clients = [];
 var busyUsers = [];
 var numUsers = 0;
 
